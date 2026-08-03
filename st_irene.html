@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>St. Irene School — Mikindani, Mombasa · Sisters of St. Joseph</title>
+<meta name="description" content="St. Irene School, Mikindani Mombasa — a Catholic K–12 CBE school of the Sisters of St. Joseph. Boarding, transport, technology from kindergarten, and the virtues of Honesty, Dedication, Servant Leadership and Hard Work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Karla:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#1b2140; --ink-2:#121731; --paper:#f5efe1; --cream:#ece0c6;
+  --gold:#c69a3e; --gold-2:#e2bd63; --sea:#0f5c63; --clay:#a8502b;
+  --line:#d6c9ad; --dark-line:#3a4066;
+  --disp:'Fraunces',Georgia,serif; --body:'Karla',system-ui,sans-serif; --mono:'IBM Plex Mono',monospace;
+  --shadow:7px 7px 0 rgba(27,33,64,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16.5px;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--ink-2)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:560;line-height:1.08;letter-spacing:-.01em}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--ink);padding:.6rem 1rem;z-index:99;font-family:var(--mono)}
+.skip:focus{left:12px;top:12px}
+
+/* grain overlay */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:120;opacity:.055;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+.wrap{width:min(1220px,92%);margin:0 auto}
+.kanga{height:14px;background-image:linear-gradient(135deg,var(--gold) 7px,transparent 0),linear-gradient(225deg,var(--gold) 7px,transparent 0);background-size:20px 14px;background-repeat:repeat-x}
+.kanga--ink{background-image:linear-gradient(135deg,var(--ink) 7px,transparent 0),linear-gradient(225deg,var(--ink) 7px,transparent 0)}
+.kanga--paper{background-image:linear-gradient(135deg,var(--paper) 7px,transparent 0),linear-gradient(225deg,var(--paper) 7px,transparent 0)}
+
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:34px;height:1.5px;background:var(--gold)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:2.6rem;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,4.2vw,3.3rem);max-width:16ch}
+.sec-head h2 em{font-style:italic;color:var(--gold)}
+.sec-head .note{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;max-width:34ch;color:inherit;opacity:.75}
+.sec-num{font-family:var(--disp);font-style:italic;font-size:clamp(3.4rem,7vw,5.5rem);color:transparent;-webkit-text-stroke:1px var(--line);line-height:1;user-select:none}
+.dark .sec-num{-webkit-text-stroke:1px var(--dark-line)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.7rem;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;position:relative;overflow:hidden;transition:color .35s}
+.btn span{position:relative;z-index:1}
+.btn::before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:0}
+.btn:hover{color:var(--paper)}
+.btn:hover::before{transform:scaleX(1)}
+.btn--gold{background:var(--gold);border-color:var(--ink)}
+.btn--gold::before{background:var(--ink-2)}
+.btn--ghost{border-color:var(--paper);color:var(--paper)}
+.btn--ghost::before{background:var(--paper)}
+.btn--ghost:hover{color:var(--ink)}
+.btn .arr{transition:transform .35s}
+.btn:hover .arr{transform:translateX(5px)}
+
+/* reveal */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ============ TOP STRIP ============ */
+.strip{background:var(--ink-2);color:var(--paper);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;gap:1rem}
+.strip .dot{color:var(--gold)}
+.strip .now-chip{color:var(--gold-2)}
+
+/* ============ HEADER ============ */
+header.site{position:sticky;top:0;z-index:90;background:var(--paper);border-bottom:1.5px solid var(--ink);transition:box-shadow .3s}
+header.site.scrolled{box-shadow:0 6px 24px rgba(27,33,64,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.85rem}
+.brand svg{width:46px;height:54px;flex:none}
+.brand-name{font-family:var(--disp);font-size:1.3rem;line-height:1;font-weight:600}
+.brand-name small{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;color:var(--gold);margin-top:.3rem;font-weight:500}
+.nav-links{display:flex;gap:1.7rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.nav-links a{position:relative;padding:.4rem 0;opacity:.85;transition:opacity .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav-links a:hover,.nav-links a.active{opacity:1}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:.8rem}
+.burger{display:none;background:none;border:1.5px solid var(--ink);padding:.55rem .7rem}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;transition:.3s}
+
+/* ============ HERO ============ */
+.hero{padding:4.2rem 0 3.5rem;position:relative;background:
+ radial-gradient(1000px 500px at 85% -10%,rgba(198,154,62,.14),transparent 60%),
+ radial-gradient(700px 400px at -10% 110%,rgba(15,92,99,.10),transparent 60%),var(--paper)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:3rem;align-items:center}
+.hero-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;color:var(--sea);margin-bottom:1.6rem;display:block;min-height:1.2em}
+.hero h1{font-size:clamp(2.9rem,6.4vw,5.4rem);font-weight:600}
+.hero h1 .it{font-style:italic;font-weight:480}
+.hero h1 .gd{color:var(--gold)}
+.mask-line{display:block;overflow:hidden}
+.mask-line>span{display:block;transform:translateY(115%);animation:rise 1s cubic-bezier(.2,.75,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes rise{to{transform:none}}
+.hero-sub{margin:1.7rem 0 2rem;max-width:52ch;font-size:1.05rem;color:#3c4262}
+.hero-sub strong{font-weight:700}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-meta{display:flex;gap:1.6rem;margin-top:2.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;flex-wrap:wrap}
+.hero-meta span{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);padding:.45rem .8rem;background:rgba(255,255,255,.4)}
+.hero-meta i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex:none}
+
+/* scattered postcards */
+.collage{position:relative;height:590px}
+.pc{position:absolute;background:#fffdf6;padding:11px 11px 40px;border:1px solid var(--line);box-shadow:var(--shadow);transform:rotate(var(--r,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,z-index 0s}
+.pc::before{content:"";position:absolute;top:-13px;left:50%;width:84px;height:26px;background:rgba(198,154,62,.55);transform:translateX(-50%) rotate(-3deg);border-left:1px dashed rgba(27,33,64,.25);border-right:1px dashed rgba(27,33,64,.25)}
+.pc figcaption{position:absolute;left:14px;bottom:10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:#5a5f7a}
+.pc .ph{overflow:hidden}
+.pc:hover{transform:rotate(0deg) translateY(-8px) scale(1.02);z-index:9;box-shadow:12px 14px 0 rgba(27,33,64,.2)}
+.pc-1{width:56%;left:0;top:2%;--r:-4deg;z-index:3}
+.pc-2{width:52%;right:0;top:26%;--r:3.5deg;z-index:2}
+.pc-3{width:47%;left:9%;bottom:0;--r:-2deg;z-index:4}
+.kb img{width:100%;height:100%;object-fit:cover}
+.kb img{animation:kb 16s ease-in-out infinite alternate}
+.pc-2 .kb img{animation-delay:-6s}.pc-3 .kb img{animation-delay:-11s}
+@keyframes kb{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(2%,-2%)}}
+.seal{position:absolute;right:6%;top:0;z-index:5;width:118px;height:118px;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal text{font-family:var(--mono);font-size:10.5px;letter-spacing:.32em;fill:var(--ink)}
+.seal circle.bg{fill:var(--gold)}
+.seal .cross{stroke:var(--ink-2);stroke-width:3}
+
+/* stats band */
+.stats{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:var(--cream)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:1.7rem 1.4rem;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none}
+.stat b{font-family:var(--disp);font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:600;display:block;line-height:1}
+.stat b sup{font-size:.5em;color:var(--gold)}
+.stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#5a5f7a}
+
+/* marquee */
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;border-bottom:1.5px solid var(--ink)}
+.marquee-track{display:flex;width:max-content;animation:marq 30s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.mgroup{display:flex;align-items:center;padding:.85rem 0;font-family:var(--disp);font-size:1.05rem;font-style:italic;white-space:nowrap}
+.mgroup b{font-family:var(--mono);font-style:normal;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);margin:0 1.1rem}
+.mgroup i{color:var(--gold);margin:0 1.1rem;font-style:normal}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ============ SECTIONS ============ */
+section{padding:5.5rem 0}
+.dark{background:var(--ink);color:var(--paper)}
+.dark{background-image:radial-gradient(rgba(245,239,225,.045) 1px,transparent 1px);background-size:26px 26px}
+
+/* sisters */
+.sisters-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:start}
+.sisters-sticky{position:sticky;top:110px}
+.candle-card{border:1.5px solid var(--ink);background:#fffdf6;padding:1.6rem;box-shadow:var(--shadow);text-align:center;max-width:330px}
+.candle{width:26px;height:76px;margin:1.2rem auto .6rem;background:linear-gradient(90deg,#f2e6c8,#e8d5a4 55%,#d9c288);position:relative}
+.candle::before{content:"";position:absolute;top:-7px;left:50%;width:2px;height:8px;background:#4a3b1e;transform:translateX(-50%)}
+.flame{position:absolute;top:-26px;left:50%;width:15px;height:24px;transform:translateX(-50%);background:radial-gradient(circle at 50% 78%,#fff7d6 0 22%,var(--gold-2) 48%,var(--clay) 82%,transparent 83%);border-radius:50% 50% 50% 50%/62% 62% 38% 38%;animation:flick .22s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes flick{0%{transform:translateX(-50%) scaleY(1) rotate(-2deg)}50%{transform:translateX(-52%) scaleY(1.12) rotate(1.5deg)}100%{transform:translateX(-48%) scaleY(.94) rotate(-1deg)}}
+.glow{width:90px;height:90px;margin:-128px auto 44px;border-radius:50%;background:radial-gradient(circle,rgba(226,189,99,.5),transparent 65%);pointer-events:none}
+.candle-card p{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sea)}
+.sisters-body h2{font-size:clamp(2rem,3.8vw,3.1rem);margin-bottom:1.4rem}
+.sisters-body h2 em{font-style:italic;color:var(--gold)}
+.sisters-body p{margin-bottom:1.2rem;color:#3d4363;max-width:62ch}
+.pull{border-left:4px solid var(--gold);padding:.6rem 0 .6rem 1.5rem;margin:2rem 0;font-family:var(--disp);font-style:italic;font-size:1.35rem;line-height:1.4}
+.pull small{display:block;font-family:var(--mono);font-style:normal;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:.8rem}
+.sisters-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.2rem}
+.sisters-facts div{background:var(--paper);padding:1.2rem}
+.sisters-facts b{font-family:var(--disp);font-size:1.5rem;display:block}
+.sisters-facts span{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#5a5f7a}
+
+/* virtues */
+.virtues-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--dark-line);border:1px solid var(--dark-line)}
+.virtue{background:var(--ink);padding:2.6rem 2.4rem;position:relative;transition:background .45s,color .45s;overflow:hidden}
+.virtue .rn{font-family:var(--disp);font-style:italic;font-size:3rem;color:var(--gold);line-height:1;display:block;margin-bottom:1.2rem;transition:transform .45s}
+.virtue svg{position:absolute;right:1.8rem;top:2rem;width:44px;height:44px;stroke:var(--gold);fill:none;stroke-width:1.4;opacity:.85;transition:transform .45s}
+.virtue h3{font-size:1.7rem;margin-bottom:.2rem}
+.virtue .sw{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);display:block;margin-bottom:1.1rem}
+.virtue p{color:#c9cce0;max-width:44ch;font-size:.98rem}
+.virtue blockquote{margin-top:1.4rem;font-family:var(--disp);font-style:italic;font-size:1.02rem;color:var(--gold-2)}
+.virtue blockquote cite{font-family:var(--mono);font-style:normal;font-size:.62rem;letter-spacing:.16em;display:block;margin-top:.4rem;color:#8b90b3}
+.virtue:hover{background:var(--paper);color:var(--ink)}
+.virtue:hover p{color:#3d4363}
+.virtue:hover blockquote{color:var(--clay)}
+.virtue:hover blockquote cite{color:#5a5f7a}
+.virtue:hover .rn{transform:translateX(6px)}
+.virtue:hover svg{transform:rotate(-8deg) scale(1.12);stroke:var(--clay)}
+
+/* academics */
+.stage-tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.2rem}
+.stage-tab{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.75rem 1.2rem;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:.3s}
+.stage-tab:hover{background:var(--cream)}
+.stage-tab.active{background:var(--ink);color:var(--gold-2)}
+.ruler{display:flex;gap:3px;margin-bottom:2.6rem}
+.ruler span{flex:1;height:34px;border:1px solid var(--line);background:#fffdf6;display:grid;place-items:center;font-family:var(--mono);font-size:.62rem;color:#8b8fa8;transition:.4s}
+.ruler span.on{background:var(--gold);border-color:var(--ink);color:var(--ink-2);font-weight:600}
+.ruler span.kg{flex:1.4}
+.stage-panel{display:none;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:start}
+.stage-panel.show{display:grid;animation:panelIn .55s cubic-bezier(.2,.7,.2,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.stage-panel h3{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:1rem}
+.stage-panel .age{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sea);display:block;margin-bottom:1.2rem}
+.stage-panel p{color:#3d4363;max-width:56ch}
+.assess{margin-top:1.6rem;border:1px dashed var(--gold);padding:1rem 1.3rem;font-size:.92rem;background:rgba(198,154,62,.08)}
+.assess b{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.3rem}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem}
+.chips li{border:1px solid var(--line);background:#fffdf6;padding:.55rem .9rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em}
+.chips li.hl{border-color:var(--ink);background:var(--cream);font-weight:600}
+.panel-side h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+
+/* tech */
+.tech-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:4rem;align-items:start}
+.tech-sticky{position:sticky;top:110px}
+.tech-sticky h2{font-size:clamp(2rem,3.8vw,3rem);margin:1rem 0 1.3rem}
+.tech-sticky h2 em{font-style:italic;color:var(--gold)}
+.tech-sticky p{color:var(--paper);opacity:.85;max-width:48ch}
+.tech-stats{display:flex;gap:2.4rem;margin-top:2.2rem}
+.tech-stats b{font-family:var(--disp);font-size:2.3rem;color:var(--gold-2);display:block;line-height:1}
+.tech-stats span{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#9ba0c2}
+.tcard{border:1px solid var(--dark-line);background:var(--ink-2);padding:2rem 2.2rem;margin-bottom:1.4rem;display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:start;transition:transform .4s,border-color .4s}
+.tcard:hover{transform:translateX(10px);border-color:var(--gold)}
+.tcard .idx{font-family:var(--disp);font-style:italic;font-size:1.6rem;color:var(--gold);min-width:44px}
+.tcard h3{font-size:1.3rem;margin-bottom:.5rem}
+.tcard p{color:#b9bdD6;font-size:.95rem;max-width:52ch}
+.tcard .tag{display:inline-block;margin-top:.9rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);border:1px solid var(--dark-line);padding:.35rem .7rem}
+.timg{overflow:hidden;margin-bottom:1.4px;border:1px solid var(--dark-line)}
+
+/* school day */
+.bell{border:1.5px solid var(--ink);background:#fffdf6;box-shadow:var(--shadow);overflow:hidden}
+.bell-row{display:grid;grid-template-columns:150px 1fr 190px;gap:1rem;padding:1rem 1.6rem;border-bottom:1px solid var(--line);align-items:center;transition:background .3s}
+.bell-row:last-child{border-bottom:none}
+.bell-row:hover{background:var(--cream)}
+.bell-row .t{font-family:var(--mono);font-size:.78rem;letter-spacing:.05em;color:var(--sea);font-weight:600}
+.bell-row .a{font-weight:700}
+.bell-row .l{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#7a7f9c}
+.bell-row.now{background:var(--gold);position:relative}
+.bell-row.now .l::after{content:"· NOW";color:var(--clay);font-weight:600;margin-left:.5rem;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.day-notes{display:flex;gap:1rem;margin-top:1.6rem;flex-wrap:wrap}
+.day-notes div{flex:1;min-width:230px;border:1px dashed var(--line);padding:1rem 1.3rem;font-size:.9rem;background:rgba(255,255,255,.45)}
+.day-notes b{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.35rem}
+
+/* boarding & transport */
+.care-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:stretch}
+.care-card{border:1.5px solid var(--ink);display:flex;flex-direction:column}
+.care-card .head{padding:1.8rem 2rem 0}
+.care-card h3{font-size:1.9rem}
+.care-card .sw2{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:block;margin:.4rem 0 1rem}
+.boarding{background:var(--ink);color:var(--paper);box-shadow:7px 7px 0 rgba(198,154,62,.35)}
+.boarding p{color:#c9cce0;margin:0 2rem 1.4rem;font-size:.97rem}
+.houses{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--dark-line);margin:0 2rem 1.6rem;border:1px solid var(--dark-line)}
+.houses div{background:var(--ink-2);padding:.9rem 1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;display:flex;align-items:center;gap:.7rem}
+.houses i{width:10px;height:10px;transform:rotate(45deg);flex:none}
+.transport{background:#fffdf6;box-shadow:var(--shadow)}
+.transport p{margin:0 2rem 1.4rem;color:#3d4363;font-size:.97rem}
+.routes{margin:0 2rem 1.6rem;border-top:1px solid var(--line)}
+.route{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem .2rem;border-bottom:1px solid var(--line);font-size:.92rem;transition:padding .3s}
+.route:hover{padding-left:.6rem;background:var(--cream)}
+.route b{font-family:var(--mono);font-weight:600;color:var(--clay);white-space:nowrap}
+.care-foot{margin-top:auto;padding:1.1rem 2rem;border-top:1px dashed var(--line);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em}
+.boarding .care-foot{border-top-color:var(--dark-line);color:var(--gold-2)}
+.transport .care-foot{color:#5a5f7a}
+
+/* news */
+.news-grid{display:grid;grid-template-columns:2fr 1fr;gap:2.4rem;align-items:start}
+.news-cards{display:grid;gap:1.6rem}
+.news-card{display:grid;grid-template-columns:230px 1fr;border:1.5px solid var(--ink);background:#fffdf6;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.news-card:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 rgba(27,33,64,.18)}
+.news-card .ph{overflow:hidden}
+.news-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.news-card:hover .ph img{transform:scale(1.08)}
+.news-card .bd{padding:1.5rem 1.7rem}
+.news-card .dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
+.news-card h3{font-size:1.35rem;margin-bottom:.5rem;line-height:1.2}
+.news-card p{font-size:.92rem;color:#3d4363}
+.calendar{border:1.5px solid var(--ink);background:var(--cream);box-shadow:var(--shadow);position:sticky;top:110px}
+.calendar h3{padding:1.4rem 1.6rem;border-bottom:1.5px solid var(--ink);font-size:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.calendar h3 span{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;color:var(--gold)}
+.calendar li{padding:.95rem 1.6rem;border-bottom:1px solid var(--line);display:flex;gap:1rem;align-items:baseline;font-size:.9rem}
+.calendar li:last-child{border:none}
+.calendar li::before{content:"◆";color:var(--gold);font-size:.6rem}
+.calendar b{font-family:var(--mono);font-size:.72rem;white-space:nowrap;color:var(--sea);min-width:74px}
+
+/* gallery */
+.gallery{columns:3;column-gap:1.4rem}
+.gallery figure{break-inside:avoid;margin-bottom:1.4rem;border:1px solid var(--line);background:#fffdf6;padding:9px;position:relative;overflow:hidden}
+.gallery .ph{overflow:hidden}
+.gallery img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1);width:100%}
+.gallery figure:hover img{transform:scale(1.09)}
+.gallery figcaption{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;padding:.7rem .3rem .2rem;color:#5a5f7a}
+
+/* admissions */
+.adm-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:3.5rem;align-items:start}
+.steps{counter-reset:st}
+.steps li{counter-increment:st;display:grid;grid-template-columns:64px 1fr;gap:1.4rem;padding:1.5rem 0;border-bottom:1px dashed var(--dark-line)}
+.steps li::before{content:"0" counter(st);font-family:var(--disp);font-style:italic;font-size:2.2rem;color:var(--gold);line-height:1}
+.steps h4{font-size:1.25rem;margin-bottom:.35rem}
+.steps p{color:#c9cce0;font-size:.94rem}
+.adm-note{margin-top:2rem;border:1px dashed var(--gold);padding:1.2rem 1.5rem;font-size:.9rem;color:#dcdff0}
+.form-card{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);padding:2.6rem;box-shadow:9px 9px 0 rgba(198,154,62,.4)}
+.form-card h3{font-size:1.8rem;margin-bottom:.4rem}
+.form-card>p{font-size:.92rem;color:#5a5f7a;margin-bottom:1.8rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.1rem}
+.frow.full{grid-template-columns:1fr}
+.field label{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sea);display:block;margin-bottom:.45rem}
+.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;border:1.5px solid var(--ink);background:#fffdf6;font-family:var(--body);font-size:.95rem;color:var(--ink);transition:box-shadow .2s,border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:3px 3px 0 rgba(198,154,62,.4)}
+.field.err input,.field.err select{border-color:var(--clay);box-shadow:3px 3px 0 rgba(168,80,43,.3)}
+.checks{display:flex;gap:1.6rem;margin:1.2rem 0 1.6rem;font-size:.88rem;flex-wrap:wrap}
+.checks label{display:flex;gap:.5rem;align-items:center;cursor:pointer}
+.checks input{accent-color:var(--gold);width:16px;height:16px}
+.form-success{display:none;text-align:center;padding:2rem 0}
+.form-success .big{font-family:var(--disp);font-style:italic;font-size:2rem;color:var(--sea);margin:.8rem 0}
+.form-success .ref{font-family:var(--mono);letter-spacing:.2em;background:var(--ink);color:var(--gold-2);display:inline-block;padding:.6rem 1.2rem;margin:.8rem 0}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.faq-item{border-bottom:1.5px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.5rem .4rem;background:none;border:none;text-align:left;font-family:var(--disp);font-size:1.25rem;color:var(--ink)}
+.faq-q .pm{font-family:var(--mono);color:var(--gold);font-size:1.3rem;transition:transform .35s;flex:none}
+.faq-item.open .pm{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.2,.7,.2,1)}
+.faq-a p{padding:0 .4rem 1.6rem;color:#3d4363;max-width:64ch}
+
+/* footer */
+footer{background:var(--ink-2);color:var(--paper)}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:3rem;padding:4.5rem 0 3rem}
+.foot-brand svg{width:52px;height:62px;margin-bottom:1rem}
+.foot-brand h3{font-size:1.5rem;margin-bottom:.4rem}
+.foot-brand .motto{font-family:var(--disp);font-style:italic;color:var(--gold-2);margin-bottom:1.2rem}
+.foot-brand p{font-size:.88rem;color:#9ba0c2;line-height:1.9}
+footer h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem}
+.foot-links li{margin-bottom:.7rem}
+.foot-links a{color:#c9cce0;font-size:.92rem;transition:color .2s,padding .3s}
+.foot-links a:hover{color:var(--gold-2);padding-left:.4rem}
+.newsletter{display:flex;border:1.5px solid var(--dark-line);margin-top:1rem}
+.newsletter input{flex:1;background:transparent;border:none;padding:.85rem 1rem;color:var(--paper);font-family:var(--body);min-width:0}
+.newsletter input:focus{outline:none}
+.newsletter button{background:var(--gold);border:none;padding:0 1.3rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);transition:background .3s}
+.newsletter button:hover{background:var(--gold-2)}
+.foot-bottom{border-top:1px solid var(--dark-line);padding:1.4rem 0;display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;color:#8b90b3;flex-wrap:wrap}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;background:rgba(18,23,49,.72);padding:1rem}
+.modal.open{display:grid}
+.modal-card{background:var(--paper);border:1.5px solid var(--ink);box-shadow:12px 12px 0 rgba(198,154,62,.45);width:min(460px,100%);padding:2.4rem;position:relative;animation:panelIn .4s cubic-bezier(.2,.7,.2,1)}
+.modal-close{position:absolute;top:.8rem;right:.8rem;background:none;border:1px solid var(--ink);width:34px;height:34px;font-size:1rem;line-height:1;transition:.3s}
+.modal-close:hover{background:var(--ink);color:var(--paper);transform:rotate(90deg)}
+.modal-card h3{font-size:1.7rem;margin-bottom:.3rem}
+.modal-card .sub{font-size:.85rem;color:#5a5f7a;margin-bottom:1.4rem}
+.ptabs{display:flex;gap:.4rem;margin-bottom:1.5rem}
+.ptab{flex:1;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;padding:.6rem;border:1px solid var(--ink);background:none;transition:.25s}
+.ptab.active{background:var(--ink);color:var(--gold-2)}
+.portal-msg{display:none;margin-top:1.1rem;border:1px dashed var(--gold);padding:.9rem 1.1rem;font-size:.85rem;background:rgba(198,154,62,.1)}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1060px){
+  .nav-links{gap:1.1rem;font-size:.66rem}
+  .hero-grid{grid-template-columns:1fr;gap:4rem}
+  .collage{height:520px;max-width:640px}
+  .sisters-grid,.tech-grid,.adm-grid{grid-template-columns:1fr}
+  .sisters-sticky,.tech-sticky{position:static}
+  .care-grid,.news-grid{grid-template-columns:1fr}
+  .calendar{position:static}
+}
+@media (max-width:880px){
+  .nav-links{position:fixed;inset:0;top:0;background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:2rem;font-size:1rem;transform:translateY(-102%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1;padding-top:3rem}
+  body.menu-open .nav-links{transform:none}
+  .burger{display:block;z-index:5}
+  body.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  body.menu-open .burger span:nth-child(2){opacity:0}
+  body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .nav-cta .btn{display:none}
+  .strip .hide-m{display:none}
+  .virtues-grid{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat{border-left:none;border-top:1px solid var(--line)}
+  .stage-panel.show{grid-template-columns:1fr}
+  .bell-row{grid-template-columns:1fr;gap:.2rem}
+  .news-card{grid-template-columns:1fr}
+  .gallery{columns:2}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .frow{grid-template-columns:1fr}
+  .adm-grid,.care-grid{gap:2rem}
+}
+@media (max-width:560px){
+  .gallery{columns:1}
+  .collage{height:480px}
+  .foot-grid{grid-template-columns:1fr}
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .mask-line>span{transform:none;animation:none}
+  .marquee-track{animation:none;flex-wrap:wrap;width:auto}
+  [data-reveal]{opacity:1;transform:none}
+  .kb img{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===== TOP STRIP ===== -->
+<div class="strip" role="note">
+  <div class="wrap">
+    <span id="topDate">—</span>
+    <span class="hide-m">Term 2 · Week 13 &nbsp;<i class="dot">◆</i>&nbsp; Gate opens 07:00 EAT</span>
+    <span><i class="dot">◆</i> <span id="topClock">--:--:--</span> <span class="now-chip" id="nowChip">—</span></span>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a class="brand" href="#welcome" aria-label="St. Irene School home">
+      <svg viewBox="0 0 46 54" aria-hidden="true"><path d="M23 1 44 7v19c0 13-9 22-21 27C11 48 2 39 2 26V7Z" fill="#1b2140" stroke="#c69a3e" stroke-width="2"/><path d="M23 10v20M14 17h18" stroke="#e2bd63" stroke-width="3" stroke-linecap="square"/><path d="M11 37c4-2 8-2 12 0 4-2 8-2 12 0" stroke="#c69a3e" stroke-width="1.8" fill="none"/><circle cx="12" cy="9.5" r="1.4" fill="#e2bd63"/><circle cx="34" cy="9.5" r="1.4" fill="#e2bd63"/></svg>
+      <span class="brand-name">St. Irene School<small>MIKINDANI · MOMBASA</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#sisters">Mission</a>
+      <a href="#virtues">Virtues</a>
+      <a href="#academics">Academics</a>
+      <a href="#technology">Technology</a>
+      <a href="#day">School Day</a>
+      <a href="#care">Boarding & Bus</a>
+      <a href="#news">News</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="btn btn--gold" data-open-portal><span>Parent Portal</span></button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ===== HERO ===== -->
+<section class="hero" id="welcome">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-eyebrow" id="scrambleEyebrow" data-text="EST. 1974 · A SCHOOL OF THE SISTERS OF ST. JOSEPH">EST. 1974 · A SCHOOL OF THE SISTERS OF ST. JOSEPH</span>
+      <h1>
+        <span class="mask-line"><span style="--d:.1s">Bright minds,</span></span>
+        <span class="mask-line"><span style="--d:.28s" class="it">gentle hearts,</span></span>
+        <span class="mask-line"><span style="--d:.46s" class="gd it">working hands.</span></span>
+      </h1>
+      <p class="hero-sub"><strong>St. Irene School</strong> is a Catholic day &amp; boarding school in Mikindani, Mombasa — walking with learners from <strong>Kindergarten to Grade 12</strong> through Kenya's competency-based CBE system, with technology taught from the earliest years and character formed in the four virtues.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--gold" href="#admissions"><span>Begin Admissions</span> <span class="arr">→</span></a>
+        <a class="btn" href="#sisters"><span>Plan a Visit</span></a>
+      </div>
+      <div class="hero-meta">
+        <span><i></i> KG → GRADE 12 · CBE</span>
+        <span><i></i> BOARDING &amp; TRANSPORT</span>
+        <span><i></i> LUMEN ET VIRTUS</span>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="false">
+      <svg class="seal" viewBox="0 0 118 118" aria-hidden="true">
+        <circle class="bg" cx="59" cy="59" r="58"/>
+        <path id="circ" fill="none" d="M59,59 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/>
+        <text><textPath href="#circ">ST·IRENE·SCHOOL·MOMBASA·LUMEN·ET·VIRTUS·</textPath></text>
+        <path class="cross" d="M59 40v38M44 53h30" fill="none"/>
+      </svg>
+      <figure class="pc pc-1"><div class="ph kb"><img src="https://picsum.photos/seed/st-irene-morning-assembly/560/400" alt="Morning assembly at St. Irene School" width="560" height="400"></div><figcaption>MONDAY ASSEMBLY · PARADE GROUND</figcaption></figure>
+      <figure class="pc pc-2"><div class="ph kb"><img src="https://picsum.photos/seed/st-irene-computer-class/540/380" alt="Learners in the computer lab" width="540" height="380"></div><figcaption>ICT SUITE I · PP2 FIRST TOUCH</figcaption></figure>
+      <figure class="pc pc-3"><div class="ph kb"><img src="https://picsum.photos/seed/st-irene-coast-playtime/460/330" alt="Playtime near the coast" width="460" height="330"></div><figcaption>PLAYTIME · INDIAN OCEAN BREEZE</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat" data-reveal><b data-count="1974">1974</b><span>Founded by the Sisters</span></div>
+    <div class="stat" data-reveal style="--d:.1s"><b><span data-count="1120">0</span><sup>+</sup></b><span>Learners · KG to Grade 12</span></div>
+    <div class="stat" data-reveal style="--d:.2s"><b data-count="48">0</b><span>Computers in two suites</span></div>
+    <div class="stat" data-reveal style="--d:.3s"><b data-count="60">0</b><span>Boarding beds · two houses</span></div>
+  </div>
+</div>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="mgroup"><b>Honesty</b> Uaminifu <i>✚</i> <b>Dedication</b> Jitihada <i>✚</i> <b>Servant Leadership</b> Uongozi wa Huduma <i>✚</i> <b>Hard Work</b> Bidii <i>✚</i> <b>Karibu St. Irene</b> Mikindani · Mombasa <i>✚</i></div>
+    <div class="mgroup"><b>Honesty</b> Uaminifu <i>✚</i> <b>Dedication</b> Jitihada <i>✚</i> <b>Servant Leadership</b> Uongozi wa Huduma <i>✚</i> <b>Hard Work</b> Bidii <i>✚</i> <b>Karibu St. Irene</b> Mikindani · Mombasa <i>✚</i></div>
+  </div>
+</div>
+
+<!-- ===== SISTERS / MISSION ===== -->
+<section id="sisters">
+  <div class="wrap sisters-grid">
+    <div class="sisters-sticky" data-reveal>
+      <span class="eyebrow">01 · Utumishi — Our Founders</span>
+      <div class="candle-card" style="margin-top:2rem">
+        <div class="candle"><span class="flame"></span></div>
+        <div class="glow"></div>
+        <p>Sanctuary lamp · Chapel of St. Joseph</p>
+      </div>
+      <p style="font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:#5a5f7a;max-width:300px;margin-top:1.6rem;line-height:2">MASS · WED &amp; FRI 06:30<br>SUNDAY · 07:00 (boarders)<br>CHAPEL OPEN DAILY 06:00–18:00</p>
+    </div>
+    <div class="sisters-body">
+      <h2 data-reveal>Owned and operated by the <em>Sisters of St. Joseph</em> — and it shows in every corridor.</h2>
+      <p data-reveal style="--d:.1s">In 1974, a small band of Sisters of St. Joseph — a Catholic congregation of religious women — crossed from Mombasa Island with two blackboards, a bell, and a conviction that the children of Mikindani deserved schooling of both excellence and tenderness. They began with nineteen pupils under a mango tree.</p>
+      <p data-reveal style="--d:.18s">Fifty-two years later, that mango shade has grown into a full K–12 campus. The Sisters still own and operate the school: they sit on the Board of Governors, teach, serve as chaplain and counsellors, and personally greet the buses each morning. Every policy here passes a simple test the foundresses set — <em>does this form the whole child?</em></p>
+      <blockquote class="pull" data-reveal style="--d:.24s">"We do not only prepare children for examinations. We prepare them for life — with Christ in the heart and competence in the hands."
+        <cite>— Rev. Sr. Mary-Cecilia, OSJ · School Superior</cite>
+      </blockquote>
+      <div class="sisters-facts" data-reveal style="--d:.3s">
+        <div><b>12</b><span>Sisters in residence</span></div>
+        <div><b>52</b><span>Years of service</span></div>
+        <div><b>6</b><span>Sisters on teaching staff</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="kanga kanga--ink" aria-hidden="true"></div>
+
+<!-- ===== VIRTUES ===== -->
+<section class="dark" id="virtues">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><span class="eyebrow">02 · Maadili — The Four Virtues</span>
+        <h2 style="margin-top:1rem">What we build <em>into</em> every child</h2></div>
+      <span class="sec-num">II</span>
+      <p class="note">The virtues are not posters on our walls — they are marked, mentored and celebrated every single term.</p>
+    </div>
+    <div class="virtues-grid">
+      <article class="virtue" data-reveal>
+        <span class="rn">I.</span>
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M4 7h16M7 7l-3 6a3.5 3.5 0 0 0 6 0Zm10 0-3 6a3.5 3.5 0 0 0 6 0ZM8 21h8"/></svg>
+        <h3>Honesty</h3><span class="sw">Uaminifu</span>
+        <p>Truth spoken kindly, even when it costs. Our learners keep honour-code pledges during assessments and lead their own parent conferences from Grade 4 upward.</p>
+        <blockquote>"Let your word be enough."<cite>— MATTHEW 5:37</cite></blockquote>
+      </article>
+      <article class="virtue" data-reveal style="--d:.08s">
+        <span class="rn">II.</span>
+        <svg viewBox="0 0 24 24"><path d="M12 2c1 3.5 5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2.2-4.8M12 22v-5"/></svg>
+        <h3>Dedication</h3><span class="sw">Jitihada</span>
+        <p>Finishing what is begun. Every learner keeps a long-term project — a garden plot, a codebase, a choir part — carried across years, not weeks.</p>
+        <blockquote>"Whatever you do, work at it with all your heart."<cite>— COLOSSIANS 3:23</cite></blockquote>
+      </article>
+      <article class="virtue" data-reveal style="--d:.16s">
+        <span class="rn">III.</span>
+        <svg viewBox="0 0 24 24"><path d="M3 15c3 2 6 2 9 0s6-2 9 0M12 3v4m0 0c-2 2-3 4-3 6h6c0-2-1-4-3-6Zm-8 16h16"/></svg>
+        <h3>Servant Leadership</h3><span class="sw">Uongozi wa Huduma</span>
+        <p>The greatest among us serves. Prefects are appointed by lot after a term of service; Grade 11s mentor KG reading circles every Friday.</p>
+        <blockquote>"Whoever wishes to be great must become a servant."<cite>— MARK 10:43</cite></blockquote>
+      </article>
+      <article class="virtue" data-reveal style="--d:.24s">
+        <span class="rn">IV.</span>
+        <svg viewBox="0 0 24 24"><path d="M14 4l6 6-3 3-6-6ZM11 7 4 14l6 6 7-7M2 22h9"/></svg>
+        <h3>Hard Work</h3><span class="sw">Bidii</span>
+        <p>Hands busy, minds awake. Our school farm in Mikindani feeds the kitchen, and every class keeps its own corner of the shamba — rain or shine.</p>
+        <blockquote>"Do you see one skilled in their work? They will serve before kings."<cite>— PROVERBS 22:29</cite></blockquote>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="kanga kanga--paper" style="background-color:var(--ink)" aria-hidden="true"></div>
+
+<!-- ===== ACADEMICS ===== -->
+<section id="academics">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><span class="eyebrow">03 · Masomo — The CBE Journey</span>
+        <h2 style="margin-top:1rem">One path, <em>fourteen years</em>, kindergarten to Grade 12</h2></div>
+      <span class="sec-num">III</span>
+      <p class="note">Kenya's competency-based system, delivered with continuous school-based assessment and KNEC moderation.</p>
+    </div>
+
+    <div class="stage-tabs" role="tablist" aria-label="CBE stages" data-reveal>
+      <button class="stage-tab active" data-tab="pp" role="tab" aria-selected="true">Pre-Primary · KG 1–2</button>
+      <button class="stage-tab" data-tab="lp" role="tab" aria-selected="false">Lower Primary · G 1–3</button>
+      <button class="stage-tab" data-tab="up" role="tab" aria-selected="false">Upper Primary · G 4–6</button>
+      <button class="stage-tab" data-tab="js" role="tab" aria-selected="false">Junior Secondary · G 7–9</button>
+      <button class="stage-tab" data-tab="ss" role="tab" aria-selected="false">Senior Secondary · G 10–12</button>
+    </div>
+
+    <div class="ruler" id="ruler" aria-hidden="true">
+      <span class="kg">KG</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+    </div>
+
+    <div class="stage-panel show" data-panel="pp" role="tabpanel">
+      <div>
+        <span class="age">Ages 4–5 · 2 years · Play-based CBE foundations</span>
+        <h3>Where four-year-olds meet their first computer and their first catechism.</h3>
+        <p>Kindergarten at St. Irene is bilingual from day one — Kiswahili and English woven through songs, sand tables and story circles. PP2 learners take weekly "first touch" sessions in the ICT Suite, learning mouse, keys and logic games before they can tie their shoes.</p>
+        <div class="assess"><b>Assessment</b>Observation portfolios, developmental checklists and termly play-based reviews shared with parents over chai.</div>
+      </div>
+      <div class="panel-side"><h4>Key Learning Areas</h4>
+        <ul class="chips"><li class="hl">Language (EN &amp; SW)</li><li class="hl">Numeracy through play</li><li>Religious Education</li><li>Creative arts &amp; music</li><li>Psychomotor &amp; movement</li><li class="hl">First touch ICT</li><li>Environmental habits</li></ul>
+      </div>
+    </div>
+
+    <div class="stage-panel" data-panel="lp" role="tabpanel">
+      <div>
+        <span class="age">Ages 6–8 · Grades 1–3</span>
+        <h3>Reading, counting, praying — the three anchors of the early years.</h3>
+        <p>Foundational literacy and numeracy are taught in small guided groups, with a Sister or teacher mentoring each reading circle. Learners begin formal Computer Studies exposure and join the school shamba rota, planting their first crops.</p>
+        <div class="assess"><b>Assessment</b>Continuous school-based CBE rubrics, end-of-term literacy &amp; numeracy checkpoints, and oral examinations in both official languages.</div>
+      </div>
+      <div class="panel-side"><h4>Key Learning Areas</h4>
+        <ul class="chips"><li class="hl">English &amp; Kiswahili</li><li class="hl">Mathematics</li><li>Environmental studies</li><li>Religious Education</li><li>Arts &amp; craft</li><li>Music &amp; movement</li><li class="hl">Digital literacy basics</li></ul>
+      </div>
+    </div>
+
+    <div class="stage-panel" data-panel="up" role="tabpanel">
+      <div>
+        <span class="age">Ages 9–11 · Grades 4–6</span>
+        <h3>The years a learner discovers what they are good at — and gives it away.</h3>
+        <p>Science, agriculture and social studies open up, and every learner codes. Grade 5 begins Scratch projects; Grade 6 undertakes the capstone "Virtue Project" — a community task defended before a panel of teachers and Sisters — alongside the national transition assessment.</p>
+        <div class="assess"><b>Assessment</b>School-based assessments across three terms plus the Grade 6 CBE national transition assessment (KNEC).</div>
+      </div>
+      <div class="panel-side"><h4>Key Learning Areas</h4>
+        <ul class="chips"><li>Languages</li><li class="hl">Mathematics</li><li class="hl">Science &amp; Technology</li><li>Social studies</li><li>Agriculture &amp; shamba</li><li class="hl">Coding · Scratch</li><li>Christian RE</li><li>Creative arts</li></ul>
+      </div>
+    </div>
+
+    <div class="stage-panel" data-panel="js" role="tabpanel">
+      <div>
+        <span class="age">Ages 12–14 · Grades 7–9</span>
+        <h3>A broad horizon before the choice: science, craft, word and service.</h3>
+        <p>Junior Secondary keeps the curriculum wide — integrated science, pre-technical studies, business and computer science — so that by Grade 9 every learner has handled a soldering iron, a spreadsheet and a soil test. Careers office opens its doors in Grade 8.</p>
+        <div class="assess"><b>Assessment</b>Continuous school-based assessment with KNEC moderation; practical portfolios in technical and digital subjects.</div>
+      </div>
+      <div class="panel-side"><h4>Key Learning Areas</h4>
+        <ul class="chips"><li class="hl">Integrated science</li><li class="hl">Computer science</li><li>Mathematics</li><li>Pre-technical studies</li><li>Business studies</li><li>Social studies &amp; RE</li><li>Languages incl. French club</li><li>Career education</li></ul>
+      </div>
+    </div>
+
+    <div class="stage-panel" data-panel="ss" role="tabpanel">
+      <div>
+        <span class="age">Ages 15–17 · Grades 10–12</span>
+        <h3>Three pathways, one destination: a young adult of competence and conscience.</h3>
+        <p>Senior Secondary learners choose a pathway — STEM (with full Computer Science), Arts &amp; Sports Science, or Social Sciences — taught in specialist rooms and supported by evening prep under staff supervision. Boarders and day scholars sit the same KCSE preparation calendar.</p>
+        <div class="assess"><b>Assessment</b>School-based formative assessment plus national KCSE examinations at Grade 12, with mock cycles and a personal mentor for every candidate.</div>
+      </div>
+      <div class="panel-side"><h4>Pathways &amp; Subjects</h4>
+        <ul class="chips"><li class="hl">STEM · Computer Science</li><li>Physics · Chemistry · Biology</li><li class="hl">Arts &amp; Sports Science</li><li>Social Sciences · CRE</li><li>Languages · Literature</li><li>Business &amp; Agriculture</li><li>Mentorship &amp; KCSE prep</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECHNOLOGY ===== -->
+<section class="dark" id="technology">
+  <div class="wrap tech-grid">
+    <div class="tech-sticky" data-reveal>
+      <span class="eyebrow">04 · Teknolojia — Screens with a Soul</span>
+      <h2>Technology taught <em>from the age of four.</em></h2>
+      <p>Two dedicated computer suites, a robotics bench and a rule we have kept since 1998: every learner touches a keyboard every week, from PP2 to Grade 12. Technology here is a tool for service — not a toy — and digital citizenship is taught as seriously as the catechism.</p>
+      <div class="tech-stats">
+        <div><b data-count="48">0</b><span>Machines</span></div>
+        <div><b data-count="2">0</b><span>ICT Suites</span></div>
+        <div><b>PP2</b><span>Starting age</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="timg" data-reveal><div class="kb"><img src="https://picsum.photos/seed/st-irene-ict-suite-mombasa/760/420" alt="Inside the ICT suite" loading="lazy" width="760" height="420"></div></div>
+      <div class="tcard" data-reveal><span class="idx">T1</span><div><h3>First Touch · PP2 Programme</h3><p>Fifteen minutes a week of guided keyboard play, logic games and picture coding — gentle, supervised, and surprisingly rigorous by age six.</p><span class="tag">Ages 4–6</span></div></div>
+      <div class="tcard" data-reveal style="--d:.06s"><span class="idx">T2</span><div><h3>Dual ICT Suites</h3><p>Suite I (24 stations) serves primary; Suite II (24 stations) serves secondary, opened in 2026. One machine per learner during lessons — no queuing, no sharing, no excuses.</p><span class="tag">48 stations</span></div></div>
+      <div class="tcard" data-reveal style="--d:.12s"><span class="idx">T3</span><div><h3>Scratch, Code &amp; Robotics Club</h3><p>Scratch from Grade 5, Python from Grade 8, and a robotics bench built with recycled parts from the Kongowea market. Our club took top prize at the 2026 Coastal Innovation Fair.</p><span class="tag">Champions '26</span></div></div>
+      <div class="tcard" data-reveal style="--d:.18s"><span class="idx">T4</span><div><h3>Computer Science Pathway</h3><p>A full senior-secondary Computer Science track — programming, data and networks — preparing learners for university and TVET routes alike.</p><span class="tag">Grades 10–12</span></div></div>
+      <div class="tcard" data-reveal style="--d:.24s"><span class="idx">T5</span><div><h3>Digital Citizenship</h3><p>Every term opens with a session on truth online, privacy and kindness — because a child who lies on the internet has not learned our first virtue.</p><span class="tag">All grades</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCHOOL DAY ===== -->
+<section id="day">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><span class="eyebrow">05 · Mchana — The Order of the Day</span>
+        <h2 style="margin-top:1rem">From the first bell to <em>lights out</em></h2></div>
+      <span class="sec-num">V</span>
+      <p class="note">All times East African Time. The row glowing gold is happening right now in Mikindani.</p>
+    </div>
+    <div class="bell" data-reveal>
+      <div class="bell-row" data-from="350" data-to="375"><span class="t">05:50 – 06:15</span><span class="a">Boarders rise · morning prayer</span><span class="l">Dormitories</span></div>
+      <div class="bell-row" data-from="375" data-to="420"><span class="t">06:15 – 07:00</span><span class="a">Breakfast</span><span class="l">Refectory</span></div>
+      <div class="bell-row" data-from="420" data-to="465"><span class="t">07:00 – 07:45</span><span class="a">Gates open · bus arrivals</span><span class="l">Main gate · Bus park</span></div>
+      <div class="bell-row" data-from="465" data-to="480"><span class="t">07:45 – 08:00</span><span class="a">Assembly &amp; class prayer</span><span class="l">Parade ground</span></div>
+      <div class="bell-row" data-from="480" data-to="620"><span class="t">08:00 – 10:20</span><span class="a">Lessons 1 – 3</span><span class="l">Classrooms</span></div>
+      <div class="bell-row" data-from="620" data-to="650"><span class="t">10:20 – 10:50</span><span class="a">Tea break &amp; play</span><span class="l">Grounds</span></div>
+      <div class="bell-row" data-from="650" data-to="780"><span class="t">10:50 – 13:00</span><span class="a">Lessons 4 – 5</span><span class="l">Classrooms · Labs</span></div>
+      <div class="bell-row" data-from="780" data-to="825"><span class="t">13:00 – 13:45</span><span class="a">Lunch</span><span class="l">Refectory · Shamba table</span></div>
+      <div class="bell-row" data-from="825" data-to="960"><span class="t">13:45 – 16:00</span><span class="a">Lessons 6 – 7</span><span class="l">Classrooms · ICT Suites</span></div>
+      <div class="bell-row" data-from="960" data-to="990"><span class="t">16:00 – 16:30</span><span class="a">Clubs &amp; games</span><span class="l">Grounds · Robotics bench</span></div>
+      <div class="bell-row" data-from="990" data-to="1005"><span class="t">16:30 – 16:45</span><span class="a">Buses depart · end of day</span><span class="l">Bus park</span></div>
+      <div class="bell-row" data-from="1050" data-to="1140"><span class="t">17:30 – 19:00</span><span class="a">Boarders: supper &amp; recreation</span><span class="l">Dormitories</span></div>
+      <div class="bell-row" data-from="1140" data-to="1275"><span class="t">19:00 – 21:15</span><span class="a">Evening prep &amp; supervised study</span><span class="l">Study hall</span></div>
+      <div class="bell-row" data-from="1275" data-to="1300"><span class="t">21:15 – 21:40</span><span class="a">Night prayer · lights out</span><span class="l">Dormitories</span></div>
+    </div>
+    <div class="day-notes" data-reveal>
+      <div><b>Chapel</b>Open daily 06:00–18:00 for quiet prayer. Wednesday &amp; Friday Mass at 06:30; whole-school First-Friday Mass on the parade ground.</div>
+      <div><b>Offices</b>School office 07:30–17:00, Mon–Fri. Admissions interviews Tuesday &amp; Thursday mornings, 10:00, by appointment.</div>
+      <div><b>Prep for day scholars</b>Optional supervised evening prep 16:45–18:00 for Grades 7–12 before the buses run.</div>
+    </div>
+  </div>
+</section>
+
+<div class="kanga kanga--gold" aria-hidden="true"></div>
+
+<!-- ===== BOARDING & TRANSPORT ===== -->
+<section id="care" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><span class="eyebrow">06 · Malezi — Boarding &amp; Buses</span>
+        <h2 style="margin-top:1rem">A home for some, <em>a ride</em> for the rest</h2></div>
+      <span class="sec-num">VI</span>
+    </div>
+    <div class="care-grid">
+      <article class="care-card boarding" data-reveal>
+        <div class="head"><h3>Boarding Facilities</h3><span class="sw2">Nyumba ya St. Irene</span></div>
+        <p>Sixty beds across two dormitories, cared for by a resident matron, a patron Sister and night staff. Boarders join evening prep, Saturday outings to the Old Town and seafront, and the full rhythm of chapel life. Places are termly, with supervised holiday stay on request.</p>
+        <div class="houses">
+          <div><i style="background:var(--gold)"></i> UAMINIFU · HONESTY</div>
+          <div><i style="background:var(--clay)"></i> JITIHADA · DEDICATION</div>
+          <div><i style="background:#4aa3a2"></i> HUDUMA · SERVICE</div>
+          <div><i style="background:var(--paper)"></i> BIDII · HARD WORK</div>
+        </div>
+        <div class="care-foot">FROM KSH 48,000 / TERM · GRADES 4 AND UP · GIRLS' &amp; BOYS' WINGS</div>
+      </article>
+      <article class="care-card transport" data-reveal style="--d:.1s">
+        <div class="head"><h3>School Transport</h3><span class="sw2">Mabasi ya St. Irene</span></div>
+        <p>Six chaperoned buses — every route accompanied by a teacher or Sister — collect from across Mombasa County before 07:15 and return by 17:00. Transport is offered at an extra cost, billed per term by route, with a 10% sibling discount.</p>
+        <div class="routes">
+          <div class="route"><span>Mikindani · Changamwe loop</span><b>KSh 8,500 / term</b></div>
+          <div class="route"><span>Nyali · Kongowea</span><b>KSh 14,000 / term</b></div>
+          <div class="route"><span>Bamburi · Shanzu</span><b>KSh 16,500 / term</b></div>
+          <div class="route"><span>Tudor · Mombasa Island</span><b>KSh 17,500 / term</b></div>
+          <div class="route"><span>Mtwapa</span><b>KSh 19,000 / term</b></div>
+          <div class="route"><span>Likoni · via ferry</span><b>KSh 21,000 / term</b></div>
+        </div>
+        <div class="care-foot">SEATS ALLOCATED AT ENROLMENT · GPS-TRACKED FLEET · FULL FEES ON REQUEST</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWS ===== -->
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><span class="eyebrow">07 · Habari — Notices &amp; Calendar</span>
+        <h2 style="margin-top:1rem">From the <em>noticeboard</em></h2></div>
+      <span class="sec-num">VII</span>
+    </div>
+    <div class="news-grid">
+      <div class="news-cards">
+        <article class="news-card" data-reveal>
+          <div class="ph"><img src="https://picsum.photos/seed/st-irene-robotics-fair/460/340" alt="Robotics fair" loading="lazy" width="460" height="340"></div>
+          <div class="bd"><span class="dt">24 July 2026 · Co-curricular</span><h3>Robotics Club takes top prize at the Coastal Innovation Fair</h3><p>Our Grades 7–9 team won first place with a solar-powered chicken-feeder prototype built from recycled market parts. The Sisters hosted the trophy's first stop: the chapel, of course.</p></div>
+        </article>
+        <article class="news-card" data-reveal style="--d:.08s">
+          <div class="ph"><img src="https://picsum.photos/seed/st-irene-ict-opening/460/340" alt="ICT suite opening" loading="lazy" width="460" height="340"></div>
+          <div class="bd"><span class="dt">18 July 2026 · Development</span><h3>ICT Suite II blessed and opened by the Reverend Sisters</h3><p>Twenty-four new stations mean one machine per learner in every computer lesson, Grades 7–12. Sr. Mary-Cecilia reminded us: "Screens are tools; the soul remains the teacher."</p></div>
+        </article>
+        <article class="news-card" data-reveal style="--d:.16s">
+          <div class="ph"><img src="https://picsum.photos/seed/st-irene-career-day/460/340" alt="Career pathways day" loading="lazy" width="460" height="340"></div>
+          <div class="bd"><span class="dt">30 June 2026 · Senior School</span><h3>Grade 9 Career Pathways Day: learners shadow professionals</h3><p>Eighty-four learners spent the day with nurses, coders, welders, catechists and ship engineers across Mombasa — choosing Senior Secondary pathways with open eyes.</p></div>
+        </article>
+      </div>
+      <aside class="calendar" data-reveal>
+        <h3>Term Calendar <span>2026</span></h3>
+        <ul>
+          <li><b>FRI 07 AUG</b> Grade 6 CBE assessment — final day</li>
+          <li><b>FRI 14 AUG</b> Term 2 closes · noon dismissal</li>
+          <li><b>MON 24 AUG</b> Term 3 opens · buses run</li>
+          <li><b>SAT 12 SEP</b> Parents' Open Day &amp; Founders' Mass</li>
+          <li><b>05–09 OCT</b> Coastal Music &amp; Drama Festival</li>
+          <li><b>FRI 23 OCT</b> Virtues Awards Assembly</li>
+          <li><b>FRI 20 NOV</b> Term 3 closes · KCSE candidates pray-over</li>
+          <li><b>23–27 NOV</b> 2027 intake admissions interviews</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><span class="eyebrow">08 · Picha — Life at St. Irene</span>
+        <h2 style="margin-top:1rem">A term in <em>pictures</em></h2></div>
+      <span class="sec-num">VIII</span>
+    </div>
+    <div class="gallery">
+      <figure data-reveal><div class="ph"><img src="https://picsum.photos/seed/st-irene-chapel-mass/640/820" alt="Chapel Mass" loading="lazy" width="640" height="820"></div><figcaption>FRIDAY MASS · CHAPEL OF ST. JOSEPH</figcaption></figure>
+      <figure data-reveal style="--d:.06s"><div class="ph"><img src="https://picsum.photos/seed/st-irene-kindergarten-play/640/480" alt="Kindergarten play" loading="lazy" width="640" height="480"></div><figcaption>KG1 · SAND TABLE COUNTING</figcaption></figure>
+      <figure data-reveal style="--d:.12s"><div class="ph"><img src="https://picsum.photos/seed/st-irene-shamba-farm/640/760" alt="School farm" loading="lazy" width="640" height="760"></div><figcaption>THE SHAMBA · GRADE 5 ROTA</figcaption></figure>
+      <figure data-reveal><div class="ph"><img src="https://picsum.photos/seed/st-irene-school-bus/640/460" alt="School bus at the gate" loading="lazy" width="640" height="460"></div><figcaption>NYALI BUS · 07:10 ARRIVAL</figcaption></figure>
+      <figure data-reveal style="--d:.06s"><div class="ph"><img src="https://picsum.photos/seed/st-irene-library-corner/640/880" alt="Library corner" loading="lazy" width="640" height="880"></div><figcaption>Sr. BEATRICE LIBRARY · READING CLUB</figcaption></figure>
+      <figure data-reveal style="--d:.12s"><div class="ph"><img src="https://picsum.photos/seed/st-irene-sports-day/640/520" alt="Sports day" loading="lazy" width="640" height="520"></div><figcaption>HOUSE SPORTS · BIDII VS HUDUMA</figcaption></figure>
+      <figure data-reveal style="--d:.18s"><div class="ph"><img src="https://picsum.photos/seed/st-irene-dormitory/640/430" alt="Boarding dormitory" loading="lazy" width="640" height="430"></div><figcaption>ST. AGNES WING · SATURDAY MORNING</figcaption></figure>
+      <figure data-reveal style="--d:.24s"><div class="ph"><img src="https://picsum.photos/seed/st-irene-graduation-joy/640/720" alt="Grade 12 celebration" loading="lazy" width="640" height="720"></div><figcaption>CLASS OF 2025 · KCSE SEND-OFF</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="kanga kanga--paper" style="background-color:var(--ink)" aria-hidden="true"></div>
+
+<!-- ===== ADMISSIONS ===== -->
+<section class="dark" id="admissions">
+  <div class="wrap adm-grid">
+    <div>
+      <span class="eyebrow">09 · Uandikishaji — Admissions</span>
+      <h2 style="font-size:clamp(2rem,3.8vw,3rem);margin:1rem 0 2rem" data-reveal>Four gentle steps to <em style="color:var(--gold)">Karibu.</em></h2>
+      <ol class="steps">
+        <li data-reveal><div><h4>Visit &amp; observe</h4><p>Tours run Tuesdays and Thursdays at 10:00. See the suites, the shamba and the chapel; bring your questions and your child's laughter.</p></div></li>
+        <li data-reveal style="--d:.08s"><div><h4>Interview &amp; assessment</h4><p>A friendly, age-appropriate meeting with teachers. KG applicants are assessed through play; transfer learners bring their CBE records.</p></div></li>
+        <li data-reveal style="--d:.16s"><div><h4>Offer &amp; documents</h4><p>Birth certificate, photos, baptism certificate (where available), previous report forms — then a signed offer and fee schedule.</p></div></li>
+        <li data-reveal style="--d:.24s"><div><h4>Karibu nyumbani</h4><p>Orientation day: house colours assigned, bus route confirmed, uniform fitted. The bell does the rest.</p></div></li>
+      </ol>
+      <div class="adm-note" data-reveal>✚&nbsp; Children of all faiths are warmly admitted. Religious Education follows the CBE syllabus, and all families join assemblies with respect. <strong>2027 intake interviews: 23–27 November 2026.</strong></div>
+    </div>
+    <div class="form-card" data-reveal style="--d:.1s">
+      <h3>Request a call-back</h3>
+      <p>Leave your details and a Sister from the admissions office will telephone you within two working days.</p>
+      <form id="admForm" novalidate>
+        <div class="frow">
+          <div class="field"><label for="pName">Parent / Guardian name *</label><input id="pName" name="pName" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="pPhone">Phone *</label><input id="pPhone" name="pPhone" type="tel" placeholder="+254 7XX XXX XXX" required></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="lName">Learner's name</label><input id="lName" name="lName" type="text"></div>
+          <div class="field"><label for="grade">Applying for grade *</label>
+            <select id="grade" name="grade" required>
+              <option value="">— Select grade —</option>
+              <option>Kindergarten 1 (PP1)</option><option>Kindergarten 2 (PP2)</option>
+              <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+              <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+            </select>
+          </div>
+        </div>
+        <div class="frow full"><div class="field"><label for="msg">Anything we should know?</label><textarea id="msg" name="msg" rows="3" placeholder="Transfer school, boarding interest, medical notes…"></textarea></div></div>
+        <div class="checks">
+          <label><input type="checkbox" name="boarding"> Interested in boarding</label>
+          <label><input type="checkbox" name="transport"> Interested in school transport</label>
+        </div>
+        <button class="btn btn--gold" type="submit" style="width:100%;justify-content:center"><span>Request a Call-Back</span> <span class="arr">→</span></button>
+      </form>
+      <div class="form-success" id="formSuccess" role="status">
+        <span style="font-size:2.2rem">✚</span>
+        <p class="big">Asante sana!</p>
+        <p>Your request has been received. A Sister from admissions will call you within two working days.</p>
+        <span class="ref" id="refCode">SI-2026-0000</span>
+        <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:#7a7f9c">QUOTE THIS REFERENCE WHEN YOU CALL</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><span class="eyebrow">10 · Maswali — Asked of the Office</span>
+        <h2 style="margin-top:1rem">Questions parents <em>actually</em> ask</h2></div>
+      <span class="sec-num">X</span>
+    </div>
+    <div class="faq" data-reveal>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you admit children who are not Catholic?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Yes — children of all faiths are warmly admitted. Christian Religious Education follows the CBE syllabus, and all learners join assemblies and the school's moral programme with respect. No child is ever pressured toward baptism or membership.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">When can my child join?<span class="pm">+</span></button>
+        <div class="faq-a"><p>The main intake is in January for KG1 and Grade 1. Mid-term and mid-year transfers are accepted subject to space and transfer documentation from the previous CBE school. The 2027 intake interviews run 23–27 November 2026.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What exactly is the CBE system you follow?<span class="pm">+</span></button>
+        <div class="faq-a"><p>CBE — Curriculum-Based Education — is Kenya's competency-based approach: learning is organised around what a child can demonstrably do, assessed continuously through school-based assessment moderated by KNEC, from Pre-Primary through the Grade 6 transition to Grade 12 and KCSE. St. Irene implements the full national pathway.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How does boarding work across the year?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Boarding is term-based, from Grade 4 upward, with 60 beds in separate girls' and boys' wings under a resident matron and a patron Sister. Supervised holiday stay is available on request for families travelling.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How is transport billed?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Transport is an extra cost, billed per term according to route (KSh 8,500–21,000). Every bus carries a chaperone — a teacher or Sister — and seats are allocated at enrolment. Siblings riding the same route receive a 10% discount.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What about meals?<span class="pm">+</span></button>
+        <div class="faq-a"><p>All learners receive cooked breakfast (boarders and early arrivals) and a hot lunch, much of it from our own Mikindani shamba. Boarders take full board. We accommodate noted allergies and dietary observances.</p></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  <div class="kanga kanga--gold" style="background-color:var(--ink-2)" aria-hidden="true"></div>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <svg viewBox="0 0 46 54" aria-hidden="true"><path d="M23 1 44 7v19c0 13-9 22-21 27C11 48 2 39 2 26V7Z" fill="none" stroke="#c69a3e" stroke-width="2"/><path d="M23 10v20M14 17h18" stroke="#e2bd63" stroke-width="3" stroke-linecap="square"/><path d="M11 37c4-2 8-2 12 0 4-2 8-2 12 0" stroke="#c69a3e" stroke-width="1.8" fill="none"/></svg>
+      <h3>St. Irene School</h3>
+      <p class="motto">Lumen et Virtus — Mwanga na Maadili</p>
+      <p>St. Irene School, P.O. Box 84217 – 80100<br>Mikindani, Mombasa – Kenya<br>+254 722 456 789 · +254 733 210 987<br>office@stirene.ac.ke · admissions@stirene.ac.ke</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul class="foot-links">
+        <li><a href="#sisters">Our Mission</a></li><li><a href="#virtues">The Four Virtues</a></li>
+        <li><a href="#academics">Academic Path</a></li><li><a href="#technology">Technology</a></li>
+        <li><a href="#care">Boarding &amp; Buses</a></li><li><a href="#admissions">Admissions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>The Office</h4>
+      <ul class="foot-links">
+        <li><a href="#day">Mon–Fri · 07:30–17:00</a></li>
+        <li><a href="#admissions">Interviews Tue &amp; Thu · 10:00</a></li>
+        <li><a href="#sisters">Chapel · daily 06:00–18:00</a></li>
+        <li><a href="#contact">Directions: Mikindani, off Mombasa–Malindi Rd, 2 km from Changamwe roundabout</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Barua ya Familia — Our Letter</h4>
+      <p style="color:#9ba0c2;font-size:.88rem">One letter a term: dates, feast days, fees notices and photographs from the shamba.</p>
+      <form class="newsletter" id="nlForm">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" required>
+        <button type="submit">Join</button>
+      </form>
+      <p id="nlMsg" style="color:var(--gold-2);font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;margin-top:.7rem;display:none">✚ KARIBU — CHECK YOUR INBOX NEXT TERM.</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <span id="yr">2026</span> ST. IRENE SCHOOL · OWNED &amp; OPERATED BY THE SISTERS OF ST. JOSEPH</span>
+    <span class="hide-m">MIKINDANI · MOMBASA · KENYA</span>
+    <span>CRAFTED BY THE SISTERS' ICT CLUB · GRADES 10–12</span>
+  </div>
+</footer>
+
+<!-- ===== PORTAL MODAL ===== -->
+<div class="modal" id="portalModal" role="dialog" aria-modal="true" aria-labelledby="portalTitle">
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">✕</button>
+    <h3 id="portalTitle">Family Portal</h3>
+    <p class="sub">Fees statements, CBE reports, bus tracking and notices — in one place.</p>
+    <div class="ptabs">
+      <button class="ptab active" data-pt="Parent ID">Parent</button>
+      <button class="ptab" data-pt="Learner No.">Learner</button>
+      <button class="ptab" data-pt="Staff ID">Staff</button>
+    </div>
+    <form id="portalForm">
+      <div class="field" style="margin-bottom:1rem"><label for="pid" id="pidLabel">Parent ID</label><input id="pid" type="text" autocomplete="username" placeholder="e.g. SI-24-0113"></div>
+      <div class="field"><label for="ppw">Password</label><input id="ppw" type="password" autocomplete="current-password"></div>
+      <button class="btn btn--gold" type="submit" style="width:100%;justify-content:center;margin-top:1.4rem"><span id="portalBtnTxt">Sign In</span></button>
+    </form>
+    <div class="portal-msg" id="portalMsg">This is a preview portal. Please contact the school office on <strong>+254 722 456 789</strong> to receive your credentials.</div>
+  </div>
+</div>
+
+<script>
+'use strict';
+document.addEventListener('DOMContentLoaded', () => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $  = (s, c=document) => c.querySelector(s);
+  const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+
+  /* ---------- EAT clock, date & "now" ---------- */
+  const fmtTime = new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Nairobi',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+  const fmtHM   = new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Nairobi',hour:'2-digit',minute:'2-digit',hour12:false});
+  const fmtDate = new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Nairobi',weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  $('#topDate').textContent = fmtDate.format(new Date());
+  $('#yr').textContent = new Date().getFullYear();
+
+  const bellRows = $$('.bell-row');
+  function minutesNow(){
+    const [h,m] = fmtHM.format(new Date()).split(':').map(Number);
+    return h*60+m;
+  }
+  function tickClock(){
+    $('#topClock').textContent = fmtTime.format(new Date()) + ' EAT';
+    const now = minutesNow();
+    let current = null;
+    bellRows.forEach(r=>{
+      const f=+r.dataset.from, t=+r.dataset.to, hit = now>=f && now<t;
+      r.classList.toggle('now', hit);
+      if(hit) current = r;
+    });
+    $('#nowChip').textContent = current
+      ? '· NOW: ' + current.querySelector('.a').textContent
+      : '· CAMPUS RESTING';
+  }
+  tickClock(); setInterval(tickClock, 1000);
+
+  /* ---------- scramble decode ---------- */
+  const glyphs = '✚ABCDEFHIKLMNOPRSTUVX†·';
+  function scramble(el){
+    const target = el.dataset.text || el.textContent;
+    if(reduced){ el.textContent = target; return; }
+    let frame = 0; const total = target.length * 3;
+    const iv = setInterval(()=>{
+      frame++;
+      const done = Math.floor((frame/total) * target.length * 1.4);
+      el.textContent = target.split('').map((ch,i)=>{
+        if(ch===' '||ch==='·'||i<done) return ch;
+        return glyphs[Math.floor(Math.random()*glyphs.length)];
+      }).join('');
+      if(done >= target.length){ el.textContent = target; clearInterval(iv); }
+    }, 28);
+  }
+  setTimeout(()=>scramble($('#scrambleEyebrow')), 350);
+
+  /* ---------- counters ---------- */
+  function runCounter(el){
+    const end = +el.dataset.count, dur = reduced ? 0 : 1400, t0 = performance.now();
+    if(dur===0){ el.textContent = end.toLocaleString('en-KE'); return; }
+    (function step(t){
+      const p = Math.min((t-t0)/dur, 1), e = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(end*e).toLocaleString('en-KE');
+      if(p<1) requestAnimationFrame(step);
+    })(t0);
+  }
+  const countIO = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ runCounter(e.target); countIO.unobserve(e.target); }
+  }),{threshold:.5});
+  $$('[data-count]').forEach(el=>countIO.observe(el));
+
+  /* ---------- scroll reveal ---------- */
+  const revIO = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); revIO.unobserve(e.target); }
+  }),{threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  $$('[data-reveal]').forEach(el=>revIO.observe(el));
+
+  /* ---------- header shadow + scrollspy ---------- */
+  const header = $('#siteHeader');
+  addEventListener('scroll', ()=>header.classList.toggle('scrolled', scrollY>10), {passive:true});
+  const spyIO = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){
+      $$('.nav-links a').forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+e.target.id));
+    }
+  }),{rootMargin:'-40% 0px -55% 0px'});
+  $$('section[id]').forEach(s=>spyIO.observe(s));
+
+  /* ---------- mobile menu ---------- */
+  $('#burger').addEventListener('click', ()=>{
+    const open = document.body.classList.toggle('menu-open');
+    $('#burger').setAttribute('aria-expanded', open);
+  });
+  $$('.nav-links a').forEach(a=>a.addEventListener('click', ()=>document.body.classList.remove('menu-open')));
+
+  /* ---------- academic stage tabs ---------- */
+  const ruler = $$('#ruler span');
+  const ranges = { pp:[0,0], lp:[1,3], up:[4,6], js:[7,9], ss:[10,12] };
+  function setStage(key){
+    $$('.stage-tab').forEach(b=>{ const on=b.dataset.tab===key; b.classList.toggle('active',on); b.setAttribute('aria-selected',on); });
+    $$('.stage-panel').forEach(p=>p.classList.toggle('show', p.dataset.panel===key));
+    const [a,b]=ranges[key];
+    ruler.forEach((s,i)=>s.classList.toggle('on', i>=a && i<=b));
+  }
+  $$('.stage-tab').forEach(b=>b.addEventListener('click', ()=>setStage(b.dataset.tab)));
+  setStage('pp');
+
+  /* ---------- FAQ accordion ---------- */
+  $$('.faq-item').forEach(item=>{
+    const q = $('.faq-q', item), a = $('.faq-a', item);
+    q.addEventListener('click', ()=>{
+      const wasOpen = item.classList.contains('open');
+      $$('.faq-item.open').forEach(o=>{ o.classList.remove('open'); $('.faq-a',o).style.maxHeight=null; $('.faq-q',o).setAttribute('aria-expanded','false'); });
+      if(!wasOpen){ item.classList.add('open'); a.style.maxHeight=a.scrollHeight+'px'; q.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  /* ---------- admissions form ---------- */
+  $('#admForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    const form = e.target; let valid = true;
+    $$('[required]', form).forEach(f=>{
+      const bad = !f.value.trim();
+      f.closest('.field').classList.toggle('err', bad);
+      if(bad) valid = false;
+    });
+    if(!valid) return;
+    $('#refCode').textContent = 'SI-2026-' + String(Math.floor(1000+Math.random()*9000));
+    form.style.display='none';
+    $('#formSuccess').style.display='block';
+  });
+  $$('[required]','#admForm').forEach(f=>f.addEventListener('input', ()=>f.closest('.field').classList.remove('err')));
+
+  /* ---------- newsletter ---------- */
+  $('#nlForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    if(e.target.querySelector('input').value.includes('@')){
+      $('#nlMsg').style.display='block'; e.target.reset();
+    }
+  });
+
+  /* ---------- portal modal ---------- */
+  const modal = $('#portalModal');
+  const openModal = ()=>{ modal.classList.add('open'); document.body.style.overflow='hidden'; setTimeout(()=>$('#pid').focus(),80); };
+  const closeModal = ()=>{ modal.classList.remove('open'); document.body.style.overflow=''; };
+  $$('[data-open-portal]').forEach(b=>b.addEventListener('click', openModal));
+  $$('[data-close]').forEach(b=>b.addEventListener('click', closeModal));
+  modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
+  addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
+  $$('.ptab').forEach(t=>t.addEventListener('click', ()=>{
+    $$('.ptab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    $('#pidLabel').textContent = t.dataset.pt;
+    $('#pid').value='';
+  }));
+  $('#portalForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    const btn = $('#portalBtnTxt'); btn.textContent='Signing in…';
+    setTimeout(()=>{ btn.textContent='Sign In'; $('#portalMsg').style.display='block'; }, reduced?50:900);
+  });
+});
+</script>
+</body>
+</html>
